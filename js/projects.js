@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const exclude = new Set(["AkaruiYami", "RandomAssignment", "Random-ISP-Thing", "LeetCode-2022", "dsc551-r", "AdventOfCode2021", "AdventOfCode"]);
 
     repos
-      .filter(repo => !repo.fork && !exclude.has(repo.name)) // filter forks + excluded names
-      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)) // sort by last update
+      .filter(repo => !repo.fork && !exclude.has(repo.name)) 
+      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)) 
       .forEach(repo => {
         const col = document.createElement("div");
         col.className = "col";
@@ -22,17 +22,25 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         col.innerHTML = `
           <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">${repo.name}</h5>
-              <p class="card-text">${description}</p>
-              ${repo.html_url
-            ? `<a href="${repo.html_url}" target="_blank" class="btn btn-primary mt-3">View Project</a>`
-            : `<button class="btn btn-secondary mt-3" disabled>No Link Available</button>`
-          }
+            <div class="card-body d-flex flex-column">
+              <div>
+                <h5 class="card-title">${repo.name}</h5>
+                <p class="card-text mb-3">${description}</p>
+              </div>
+
+              <div class="mt-auto">
+                ${repo.html_url
+                    ? `<a href="${repo.html_url}" target="_blank" class="btn btn-primary me-2">View Project</a>`
+                    : `<button class="btn btn-secondary me-2" disabled>No Link Available</button>`
+                  }
+                ${repo.homepage
+                    ? `<a href="${repo.homepage}" target="_blank" class="btn btn-outline-success">Homepage</a>`
+                    : ``
+                  }
+              </div>
             </div>
           </div>
         `;
-
         container.appendChild(col);
       });
   } catch (err) {
