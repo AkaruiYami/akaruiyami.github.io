@@ -1,0 +1,355 @@
+@font-face {
+    font-family: "Jersey";
+    src: url("/statics/fonts/Jersey15-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Core identity */
+    --bg-main: #0a0a0a;
+    --bg-card: #0f0f0f;
+
+    --red-glow: #FF0033;
+    --cold-accent: #8ab4f8;
+
+    --text-main: #e6e6e6;
+    --text-muted: #9a9a9a;
+    --border-soft: #1c1c1c;
+}
+
+/* Base */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* Typography */
+p {
+    color: var(--text-muted);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--text-main);
+}
+
+h1, h2, h3,
+.navbar-brand {
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.15em;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 0, 51, 0.4);
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(255, 0, 51, 0.35);
+}
+
+
+/* Cards */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+}
+
+/* Primary Action (RED) */
+.btn-primary {
+    background: linear-gradient(
+        180deg,
+        #ff3355,
+        #cc0028
+    );
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.btn-primary:hover {
+    background-color: #ff0033;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+        0 0 16px rgba(255, 0, 51, 0.35);
+}
+
+
+/* Secondary Action (COLD) */
+.btn-outline-secondary {
+    color: var(--cold-accent);
+    border-color: var(--cold-accent);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--cold-accent);
+    color: #020617;
+}
+
+/* Links */
+a {
+    color: var(--cold-accent);
+}
+
+a:hover {
+    color: #a7c7ff;
+}
+
+/* Logo / Special Glow */
+.glow-red {
+    box-shadow: 0 0 30px rgba(255, 0, 51, 0.55);
+}
+
+/* NAVBAR */
+.navbar-sigil {
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom: 1px solid var(--border-soft);
+    backdrop-filter: blur(6px);
+}
+
+/* Brand text */
+.navbar-sigil .navbar-brand {
+    color: var(--red-glow);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar-sigil .navbar-brand:hover {
+    color: #ffffff;
+    text-shadow: 0 0 14px rgba(255, 0, 51, 0.55);
+}
+
+/* Links */
+.navbar-sigil .nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.navbar-sigil .nav-link:hover {
+    color: var(--cold-accent);
+}
+
+/* "Active" link styling (add .active in HTML, or do it via JS later) */
+.navbar-sigil .nav-link.active {
+    color: var(--red-glow);
+    text-shadow: 0 0 10px rgba(255, 0, 51, 0.45);
+}
+
+/* Toggler button glow */
+.navbar-sigil .navbar-toggler {
+    border-color: rgba(255, 0, 51, 0.35);
+}
+
+.navbar-sigil .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 51, 0.25);
+}
+
+/* FOOTER */
+.footer-sigil {
+    background: rgba(10, 10, 10, 0.96);
+    border-top: 1px solid var(--border-soft);
+    color: var(--text-muted);
+}
+
+.footer-sigil p {
+    margin: 0;
+}
+
+/* ABOUT PAGE WRAPPER */
+.about-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Page title */
+.about-page h1 {
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 14px rgba(255, 0, 51, 0.45);
+}
+
+/* Section headings */
+.about-page h3 {
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.14em;
+    margin-top: 3rem;
+    color: var(--text-main);
+}
+
+/* Paragraphs */
+.about-page p {
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* Highlight name */
+.about-page strong {
+    color: var(--red-glow);
+}
+
+.about-page a {
+    color: var(--cold-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.about-page a:hover {
+    border-bottom-color: var(--cold-accent);
+}
+
+/* List group reset for dark theme */
+.list-group-item {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: none;
+    padding-left: 0;
+}
+
+/* Add subtle divider */
+.list-group-item:not(:last-child) {
+    border-bottom: 1px solid var(--border-soft);
+}
+
+/* Emphasis inside list */
+.list-group-item strong {
+    color: var(--text-main);
+}
+
+/* Red divider glyph */
+.divider-glyph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    color: var(--red-glow);
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.4em;
+    font-size: 1.2rem;
+    text-shadow: 0 0 12px rgba(255, 0, 51, 0.45);
+}
+
+.divider-glyph::before,
+.divider-glyph::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        to var(--dir, right),
+        transparent,
+        rgba(255, 0, 51, 0.6)
+    );
+    margin: 0 1rem;
+}
+
+.divider-glyph::after {
+    --dir: left;
+}
+
+/* PROJECTS PAGE */
+.projects-page h1 {
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-shadow: 0 0 14px rgba(255, 0, 51, 0.45);
+}
+
+/* Card base */
+.projects-page .card {
+    background: radial-gradient(
+        120% 120% at 50% 0%,
+        rgba(255, 0, 51, 0.08),
+        rgba(10, 10, 10, 0.98)
+    );
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+/* Card hover: lift + red glow */
+.projects-page .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 0, 51, 0.35);
+    box-shadow: 0 0 22px rgba(255, 0, 51, 0.20);
+}
+
+/* Card content */
+.projects-page .card-title {
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.10em;
+    color: var(--text-main);
+}
+
+.projects-page .card-text {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Badges/tags if you use them */
+.projects-page .badge {
+    background-color: rgba(255, 0, 51, 0.14);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 0, 51, 0.25);
+}
+
+/* Links inside cards */
+.projects-page a {
+    color: var(--cold-accent);
+    text-decoration: none;
+}
+
+.projects-page a:hover {
+    color: #a7c7ff;
+    text-shadow: 0 0 10px rgba(138, 180, 248, 0.25);
+}
+
+/* Buttons in cards */
+.projects-page .btn-primary {
+    box-shadow: 0 0 0 rgba(255, 0, 51, 0);
+}
+
+.projects-page .btn-primary:hover {
+    box-shadow: 0 0 18px rgba(255, 0, 51, 0.35);
+}
+
+/* Accent outline button (replaces Bootstrap success) */
+.btn-outline-accent {
+    color: var(--cold-accent);
+    border-color: var(--cold-accent);
+}
+
+.btn-outline-accent:hover {
+    background-color: var(--cold-accent);
+    color: #020617;
+    box-shadow: 0 0 16px rgba(138, 180, 248, 0.35);
+}
+
+.project-card .small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+.project-card::after {
+    content: "△";
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-family: "Jersey", sans-serif;
+    color: rgba(255, 0, 51, 0.4);
+    text-shadow: 0 0 10px rgba(255, 0, 51, 0.35);
+}
+
+.project-card {
+    position: relative;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
