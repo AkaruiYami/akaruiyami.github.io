@@ -8,6 +8,15 @@
 
     navbarContainer.innerHTML = html;
 
+    // Active nav link
+    const currentPath = window.location.pathname;
+    navbarContainer.querySelectorAll(".nav-link").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && currentPath.endsWith(href)) {
+        link.classList.add("active");
+      }
+    });
+
     const collapseEl = navbarContainer.querySelector("#navbarNav");
     const toggler = navbarContainer.querySelector(".navbar-toggler");
 

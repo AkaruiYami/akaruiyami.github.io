@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("projects");
   if (!container) return;
 
+  // Remove skeleton loaders
+  container.querySelectorAll(".skeleton-card-wrap").forEach(el => el.remove());
+
   try {
     const response = await fetch("https://api.github.com/users/AkaruiYami/repos");
     const repos = await response.json();
@@ -21,9 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     repos
       .filter(repo => !repo.fork && !exclude.has(repo.name))
       .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-      .forEach(repo => {
+      .forEach((repo, i) => {
         const col = document.createElement("div");
         col.className = "col";
+        col.style.animation = `fadeUp 0.5s ease ${i * 0.06}s both`;
 
         const description = repo.description || "No description available";
         const updated = new Date(repo.updated_at).toLocaleDateString();
@@ -43,17 +47,15 @@ document.addEventListener("DOMContentLoaded", async () => {
               </div>
 
               <div class="mt-auto">
-                ${
-                  repo.html_url
-                    ? `<a href="${repo.html_url}" target="_blank" class="btn btn-primary me-2">GitHub</a>`
-                    : `<button class="btn btn-secondary me-2" disabled>No Repo</button>`
-                }
+                ${repo.html_url
+            ? `<a href="${repo.html_url}" target="_blank" class="btn btn-primary me-2">GitHub</a>`
+            : `<button class="btn btn-secondary me-2" disabled>No Repo</button>`
+          }
 
-                ${
-                  repo.homepage
-                    ? `<a href="${repo.homepage}" target="_blank" class="btn btn-outline-accent">Live</a>`
-                    : ``
-                }
+                ${repo.homepage
+            ? `<a href="${repo.homepage}" target="_blank" class="btn btn-outline-accent">Website</a>`
+            : ``
+          }
               </div>
 
             </div>

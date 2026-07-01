@@ -8,6 +8,7 @@
     <meta name="description"
         content="Explore featured and other software projects by AkaruiYami, including web applications, finance dashboards, AI tools, and experimental development work." />
 
+    <link rel="icon" type="image/svg+xml" href="/statics/assets/favicon.svg">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/theme.css" rel="stylesheet">
@@ -15,6 +16,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <div id="navbar"></div>
+    <script src="/js/navbar.js"></script>
 
     <main class="projects-page">
         <div class="container mt-5">
@@ -27,14 +29,14 @@
             </p>
 
             <!-- Highlighted Projects Carousel -->
-            <section class="mb-5">
+            <section class="mb-5 reveal">
                 <h2 class="text-center mb-4">Highlighted Projects</h2>
 
                 <div id="highlightedProjectsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
                         <div class="carousel-item active">
-                            <div class="card shadow-sm border-0 mx-auto" style="max-width: 850px;">
+                            <div class="card mx-auto" style="max-width: 850px;">
                                 <div class="card-body p-4 p-md-5 text-center">
                                     <h3 class="card-title">Scheduler – Timetable Management System</h3>
                                     <p class="card-text">
@@ -53,7 +55,7 @@
                         </div>
 
                         <div class="carousel-item">
-                            <div class="card shadow-sm border-0 mx-auto" style="max-width: 850px;">
+                            <div class="card mx-auto" style="max-width: 850px;">
                                 <div class="card-body p-4 p-md-5 text-center">
                                     <h3 class="card-title">syFinance - Personal Finance App</h3>
                                     <p class="card-text">
@@ -66,14 +68,13 @@
                                     <div class="d-flex justify-content-center gap-2 flex-wrap">
                                         <a href="https://github.com/AkaruiYami/syFinance" class="btn btn-primary">View
                                             Repository</a>
-                                        <a href="/pages/contact.html" class="btn btn-outline-secondary">Contact Me</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="carousel-item">
-                            <div class="card shadow-sm border-0 mx-auto" style="max-width: 850px;">
+                            <div class="card mx-auto" style="max-width: 850px;">
                                 <div class="card-body p-4 p-md-5 text-center">
                                     <h3 class="card-title">Enhanced Langton’s Ant – Cellular Automata Simulation</h3>
                                     <p class="card-text">
@@ -93,13 +94,13 @@
 
                     </div>
 
-                    <button class="carousel-control-prev" type="button" data-bs-target="#highlightedProjectsCarousel"
+                    <button class="carousel-control-prev carousel-control-custom" type="button" data-bs-target="#highlightedProjectsCarousel"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
 
-                    <button class="carousel-control-next" type="button" data-bs-target="#highlightedProjectsCarousel"
+                    <button class="carousel-control-next carousel-control-custom" type="button" data-bs-target="#highlightedProjectsCarousel"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
@@ -108,9 +109,17 @@
             </section>
 
             <!-- All Projects -->
-            <section>
+            <section class="reveal">
                 <h2 class="text-center mb-4">All Projects</h2>
-                <div id="projects" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+                <div id="projects" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Loading skeleton -->
+                    <div class="col skeleton-card-wrap"><div class="skeleton skeleton-card"></div></div>
+                    <div class="col skeleton-card-wrap"><div class="skeleton skeleton-card"></div></div>
+                    <div class="col skeleton-card-wrap"><div class="skeleton skeleton-card"></div></div>
+                    <div class="col skeleton-card-wrap d-none d-md-block"><div class="skeleton skeleton-card"></div></div>
+                    <div class="col skeleton-card-wrap d-none d-lg-block"><div class="skeleton skeleton-card"></div></div>
+                    <div class="col skeleton-card-wrap d-none d-lg-block"><div class="skeleton skeleton-card"></div></div>
+                </div>
             </section>
         </div>
     </main>
@@ -118,9 +127,10 @@
     <div id="footer-container" class="mt-5"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/navbar.js"></script>
-    <script src="/js/projects.js"></script>
     <script src="/js/footer.js"></script>
+    <script src="/js/projects.js"></script>
+    <script src="/js/reveal.js"></script>
+    <script src="/js/backtotop.js"></script>
 </body>
 
 </html>
