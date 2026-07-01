@@ -28,6 +28,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-main);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+    animation: fadeInPage 0.35s ease;
 }
 
 
@@ -110,6 +111,12 @@ a:hover {
 }
 
 /* NAVBAR */
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
 .navbar-sigil {
     background: rgba(10, 10, 10, 0.92);
     border-bottom: 1px solid var(--border-soft);
@@ -380,6 +387,11 @@ a:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* =============================================
@@ -714,6 +726,20 @@ a:hover {
    ============================================= */
 .glow-text {
     text-shadow: 0 0 12px rgba(255, 0, 51, 0.4);
+}
+
+/* =============================================
+   SCROLL PROGRESS BAR
+   ============================================= */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red-glow), #ff6688);
+    z-index: 1030;
+    transition: width 0.05s linear;
 }
 
 /* =============================================
