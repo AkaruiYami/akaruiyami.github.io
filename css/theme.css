@@ -216,6 +216,22 @@ a:hover {
     border-bottom-color: var(--cold-accent);
 }
 
+/* Skill group labels */
+.skill-group-label {
+    font-family: "Jersey", sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+/* Center skill strips within skill groups */
+.skill-group .skills-strip {
+    justify-content: center;
+}
+
 /* List group reset for dark theme */
 .list-group-item {
     background-color: transparent;
@@ -579,6 +595,17 @@ a:hover {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+/* About page projects: force 3-column row */
+.about-page .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 850px) {
+    .about-page .featured-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =============================================
