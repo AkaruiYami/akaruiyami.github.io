@@ -31,55 +31,133 @@
     <div id="navbar"></div>
     <script src="/js/navbar.js"></script>
 
-    <main>
-        <div class="container mt-5 mb-5">
-            <h1 class="mb-4">About Me</h1>
-
-            <p>
-                Hello, I'm <strong>AkaruiYami</strong>, a developer based in Malaysia focused on backend development,
-                Python applications, automation, and practical software projects.
+    <main class="about-page">
+        <!-- Hero Header -->
+        <section class="container text-center mt-5 pt-3 reveal">
+            <img class="img-fluid rounded-circle shadow-lg mb-4 glow-red" src="/statics/assets/akaruiyami-code-logo.jpg"
+                alt="AkaruiYami profile logo" width="130" height="130">
+            <h1 class="mb-3">About Me</h1>
+            <p class="lead" style="max-width: 600px; margin-inline: auto;">
+                A developer from Malaysia focused on backend systems, automation, and building practical software that works.
             </p>
+        </section>
 
+        <!-- Journey -->
+        <section class="container reveal" style="max-width: 720px;">
+            <div class="divider-glyph">△ ✕ △</div>
+            <h3>My Journey</h3>
             <p>
-                My journey with coding began in 2017, when I discovered how satisfying it was to write simple commands
-                and see them work as intended. What started as curiosity soon grew into a deeper interest in programming,
-                software design, and problem-solving.
+                Hello, I'm <strong>AkaruiYami</strong>. My journey with coding began in 2017, when I discovered how
+                satisfying it was to write simple commands and see them work as intended. What started as curiosity soon
+                grew into a deeper interest in programming, software design, and problem-solving.
             </p>
-
             <p>
                 Since then, I have worked with technologies such as Python, SQL, JavaScript, Bootstrap, and other tools
                 for building web applications, dashboards, CLI utilities, and experimental software projects. I enjoy
                 learning new technologies and turning ideas into useful, working software.
             </p>
+        </section>
 
-            <h2 class="mt-4 mb-3 reveal">Skills</h2>
-            <ul class="list-group list-group-flush mb-4 reveal">
-                <li class="list-group-item"><strong>Core Languages:</strong> Python, JavaScript, Rust, GDScript, ObjectScript</li>
-                <li class="list-group-item"><strong>Frameworks & Tools:</strong> Streamlit, Django, Bootstrap, PySimpleGUI, Figma</li>
-                <li class="list-group-item"><strong>Specialties:</strong> Backend development, automation scripting, CLI tools, GUI applications</li>
-                <li class="list-group-item"><strong>Databases:</strong> InterSystems IRIS, SQL, MongoDB</li>
-                <li class="list-group-item"><strong>DevOps & Version Control:</strong> Git, PowerShell, Shell scripting, CI/CD</li>
-                <li class="list-group-item"><strong>Other Competencies:</strong> Problem-solving, algorithmic programming, UX design, and Python mentoring</li>
-            </ul>
+        <!-- Skills -->
+        <section class="container reveal">
+            <div class="divider-glyph">△ ✕ △</div>
+            <h3 class="text-center mb-4">Skills</h3>
 
-            <h2 class="mt-4 mb-3 reveal">Projects</h2>
-            <p>
-                You can explore more of my work on <a href="https://github.com/AkaruiYami" target="_blank" rel="noopener noreferrer">GitHub</a>
-                or browse additional project write-ups on the <a href="/pages/projects.html">Projects</a> page.
+            <div class="skill-group mb-4">
+                <p class="skill-group-label">Core Languages</p>
+                <div class="skills-strip">
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">Rust</span>
+                    <span class="skill-badge">GDScript</span>
+                    <span class="skill-badge">ObjectScript</span>
+                </div>
+            </div>
+
+            <div class="skill-group mb-4">
+                <p class="skill-group-label">Frameworks &amp; Tools</p>
+                <div class="skills-strip">
+                    <span class="skill-badge">Streamlit</span>
+                    <span class="skill-badge">Django</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">PySimpleGUI</span>
+                    <span class="skill-badge">Figma</span>
+                </div>
+            </div>
+
+            <div class="skill-group mb-4">
+                <p class="skill-group-label">Databases</p>
+                <div class="skills-strip">
+                    <span class="skill-badge">InterSystems IRIS</span>
+                    <span class="skill-badge">SQL</span>
+                    <span class="skill-badge">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-group mb-4">
+                <p class="skill-group-label">DevOps &amp; Workflow</p>
+                <div class="skills-strip">
+                    <span class="skill-badge">Git &amp; CI/CD</span>
+                    <span class="skill-badge">PowerShell</span>
+                    <span class="skill-badge">Shell Scripting</span>
+                </div>
+            </div>
+
+            <div class="skill-group mb-4">
+                <p class="skill-group-label">Specialties</p>
+                <div class="skills-strip">
+                    <span class="skill-badge">Backend Development</span>
+                    <span class="skill-badge">Automation</span>
+                    <span class="skill-badge">CLI Tools</span>
+                    <span class="skill-badge">GUI Applications</span>
+                    <span class="skill-badge">UX Design</span>
+                    <span class="skill-badge">Python Mentoring</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="container reveal">
+            <div class="divider-glyph">△ ✕ △</div>
+            <h3 class="text-center mb-4">Projects</h3>
+            <p class="text-center mb-4">
+                A selection of work spanning backend tools, dashboards, and experimental software.
+                Explore more on <a href="https://github.com/AkaruiYami" target="_blank"
+                    rel="noopener noreferrer">GitHub</a> or the <a href="/pages/projects.html">Projects</a> page.
             </p>
 
-            <ul class="list-group list-group-flush mb-4">
-                <li class="list-group-item">
-                    <strong>Navtar:</strong> A Rust-based CLI tool for navigating and managing workspaces more efficiently.
-                </li>
-                <li class="list-group-item">
-                    <strong>syFinance:</strong> A personal finance dashboard built with Python and Streamlit for tracking and visualizing financial data.
-                </li>
-                <li class="list-group-item">
-                    <strong>Enhanced Langton's Ant:</strong> A simulation project exploring cellular automata, emergent patterns, and algorithmic behavior.
-                </li>
-            </ul>
-        </div>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="card-body">
+                        <h3>Navtar</h3>
+                        <p>A Rust-based CLI tool for navigating and managing workspaces more efficiently.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/AkaruiYami/navtar" class="btn btn-primary btn-sm">View</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="card-body">
+                        <h3>syFinance</h3>
+                        <p>A personal finance dashboard built with Python and Streamlit for tracking and visualizing
+                            financial data.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/AkaruiYami/syFinance" class="btn btn-primary btn-sm">View</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="card-body">
+                        <h3>Enhanced Langton's Ant</h3>
+                        <p>A simulation project exploring cellular automata, emergent patterns, and algorithmic behavior.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/AkaruiYami/enhanced-langton-ant" class="btn btn-primary btn-sm">View</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div id="footer-container" class="mt-5"></div>
