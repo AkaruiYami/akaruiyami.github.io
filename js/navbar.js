@@ -1,34 +1,23 @@
-(async () => {
-  try {
-    const res = await fetch("/components/navbar.html");
-    const html = await res.text();
-
-    const navbarContainer = document.getElementById("navbar");
-    if (!navbarContainer) return;
-
-    navbarContainer.innerHTML = html;
-
-    // Active nav link
-    const currentPath = window.location.pathname;
-    navbarContainer.querySelectorAll(".nav-link").forEach(link => {
-      const href = link.getAttribute("href");
-      if (href && currentPath.endsWith(href)) {
-        link.classList.add("active");
-      }
-    });
-
-    const collapseEl = navbarContainer.querySelector("#navbarNav");
-    const toggler = navbarContainer.querySelector(".navbar-toggler");
-
-    if (collapseEl && toggler) {
-      toggler.addEventListener("click", () => {
-        const bsCollapse =
-          bootstrap.Collapse.getInstance(collapseEl) ||
-          new bootstrap.Collapse(collapseEl, { toggle: false });
-        bsCollapse.toggle();
-      });
+(() => {
+  const nav = document.getElementById('navbar');
+  if (!nav) return;
+  const current = location.pathname === '/' ? '/index.html' : location.pathname;
+  nav.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === current) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
-  } catch (err) {
-    console.error("Failed to load navbar:", err);
-  }
+  });
+  const pages = ['/index.html', '/pages/about.html', '/pages/projects.html', '/pages/music.html', '/pages/contact.html'];
+  let visited = [];
+  try {
+    const saved = JSON.parse(localStorage.getItem('ay-exploration') || '[]');
+    if (Array.isArray(saved)) visited = [...new Set(saved.map(page => page === 'home' ? '/index.html' : page.startsWith('/') ? page : '/pages/' + page).filter(page => pages.includes(page)))];
+    if (pages.includes(current) && !visited.includes(current)) visited.push(current);
+    localStorage.setItem('ay-exploration', JSON.stringify(visited));
+  } catch (_) { visited = pages.includes(current) ? [current] : []; }
+  nav.querySelector('#explorer-count').textContent = `${visited.length}/${pages.length}`;
+  const status = nav.querySelector('.explorer-status');
+  status.title = visited.length === pages.length ? 'World explorer badge earned — all five pages discovered!' : 'Explore all five pages';
+  status.setAttribute('aria-label', `Explored ${visited.length} of ${pages.length} pages`);
 })();

@@ -11,127 +11,46 @@
     <link rel="icon" type="image/svg+xml" href="/statics/assets/favicon.svg">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/theme.css?v=20261104-3" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <div id="navbar"></div>
-    <script src="/js/navbar.js"></script>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="navbar"><nav class="adventure-nav container" aria-label="Main navigation"><a class="world-brand" href="/index.html" aria-label="AkaruiYami home"><img class="brand-insignia" src="/statics/assets/akaruiyami-insignia.jpg" width="45" height="32" alt=""> AkaruiYami<span class="brand-sub"> / PERSONAL WORLD</span></a><div class="world-links"><a class="nav-link" href="/index.html">Home</a><a class="nav-link" href="/pages/about.html">About</a><a class="nav-link" href="/pages/projects.html">Projects</a><a class="nav-link" href="/pages/music.html">Music</a><a class="nav-link" href="/pages/contact.html">Contact</a></div><span class="explorer-status" title="Explore all five pages"><span>EXPLORER</span> <b id="explorer-count">0/5</b></span></nav></div>
+    <script src="/js/navbar.js?v=20261104-3"></script>
 
-    <main class="projects-page">
-        <div class="container mt-5">
-            <h1 class="mb-3 text-center">Projects</h1>
-            <div class="divider-glyph">△ ✕ △</div>
+<main id="main" class="projects-page projects-world">
+<section class="container projects-intro"><div><p class="eyebrow">01 / THE QUEST LOG</p><h1>Curiosity,<br>put to <em>work.</em></h1></div><div class="projects-intro-copy"><p>Useful tools. Curious experiments.<br>A little of everything I love building.</p><p>Explore backend systems, dashboards, developer utilities, and experiments in emergent behavior.</p><a class="quiet-link" href="#repository-library">Browse the repository library ↓</a></div></section>
+<section class="project-feature-band"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / SELECTED QUESTS</p><h2>A closer look at the work.</h2></div><p>A selection of tools and experiments.<br>Open a project to explore the source.</p></div><div class="project-highlights">
+<a class="quest-row" href="https://github.com/AkaruiYami/syFinance"><span class="quest-number">01</span><div class="project-art finance-art" aria-hidden="true"><span>↑</span><i></i><i></i><i></i><i></i><i></i></div><div class="quest-description"><span class="eyebrow">EVERYDAY TOOLS</span><h3>syFinance</h3><p>A little clarity for everyday finances. Track income, expenses, and savings in one dashboard.</p><span class="project-tags">Python / Streamlit / SQLite</span></div><span class="project-arrow">↗</span></a>
+<a class="quest-row" href="https://github.com/AkaruiYami/navtar"><span class="quest-number">02</span><div class="project-art terminal-art" aria-hidden="true"><small>● ● ●</small><span>~/workspace<br><b>❯ navtar_</b></span></div><div class="quest-description"><span class="eyebrow">DEVELOPER UTILITIES</span><h3>Navtar</h3><p>Less navigating. More building. A Rust CLI for finding your way around workspaces.</p><span class="project-tags">Rust / CLI / Workflow</span></div><span class="project-arrow">↗</span></a>
+<a class="quest-row" href="https://github.com/AkaruiYami/enhanced-langton-ant"><span class="quest-number">03</span><div class="project-art ant-art" aria-hidden="true"><span>▟▙▟<br>▜▛▞<br>▙▚▟</span></div><div class="quest-description"><span class="eyebrow">THE EXPERIMENTAL CORNER</span><h3>Enhanced Langton's Ant</h3><p>Simple rules. Unexpected worlds. Exploring emergent patterns through cellular automata.</p><span class="project-tags">Algorithms / Simulation / Exploration</span></div><span class="project-arrow">↗</span></a>
+<a class="quest-row" href="https://github.com/AkaruiYami/Scheduler"><span class="quest-number">04</span><div class="project-art schedule-art" aria-hidden="true"><span>MON / TUE / WED</span><div>▰ ▱ ▰<br>▱ ▰ ▱<br>▰ ▰ ▱</div></div><div class="quest-description"><span class="eyebrow">AN EARLIER CHAPTER</span><h3>Scheduler</h3><p>A timetable management system for organizing schedules and structured data workflows.</p><span class="project-tags">Scheduling / Backend logic / System design</span></div><span class="project-arrow">↗</span></a></div></div></section>
+<section class="container repository-library" id="repository-library" aria-labelledby="library-heading"><div class="section-heading"><div><p class="eyebrow">03 / THE REPOSITORY LIBRARY</p><h2 id="library-heading">More paths to explore.</h2></div><a class="quiet-link" href="https://github.com/AkaruiYami?tab=repositories">All repositories on GitHub ↗</a></div><p class="library-intro">More projects from GitHub, ordered by their latest update.</p><div id="projects" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"><p class="repository-loading" role="status">Loading projects from GitHub…</p></div></section>
+<section class="project-closing"><div class="container about-outro"><div><p class="eyebrow">THE NEXT QUEST</p><h2>Let's build something useful.</h2></div><a class="btn btn-primary" href="/pages/contact.html">Let's connect ↗</a></div></section>
+</main>
 
-            <p class="text-center mt-3 mb-5">
-                A selection of projects focused on backend systems, dashboards, AI tools, and experimental software
-                development.
-            </p>
+    <div id="footer-container"><footer class="footer-sigil text-center py-4">
+  <div class="container">
+    <div class="footer-social">
+      <a href="https://github.com/AkaruiYami" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://x.com/AkaruiYamiCode" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://www.youtube.com/@akaruiyamicode" target="_blank" rel="noopener noreferrer">YouTube · Code</a>
+      <a href="https://www.youtube.com/@akaruiyamilyrics" target="_blank" rel="noopener noreferrer">YouTube · Lyrics &amp; Music</a>
+    </div>
+    <p class="mb-0 small">
+      &copy; <span id="copyright-year">2026</span> AkaruiYami. All rights reserved.
+    </p>
+  </div>
+</footer>
+</div>
 
-            <!-- Highlighted Projects Carousel -->
-            <section class="mb-5 reveal">
-                <h2 class="text-center mb-4">Highlighted Projects</h2>
 
-                <div id="highlightedProjectsCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-                            <div class="card mx-auto" style="max-width: 850px;">
-                                <div class="card-body p-4 p-md-5 text-center">
-                                    <h3 class="card-title">Scheduler – Timetable Management System</h3>
-                                    <p class="card-text">
-                                        An earlier project focused on building a timetable management system
-                                        for organizing schedules and structured data workflows.
-                                    </p>
-                                    <p class="text-muted mb-4">
-                                        Demonstrates early system design and backend logic development.
-                                    </p>
-                                    <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                        <a href="https://github.com/AkaruiYami/Scheduler" class="btn btn-primary">View
-                                            Repository</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card mx-auto" style="max-width: 850px;">
-                                <div class="card-body p-4 p-md-5 text-center">
-                                    <h3 class="card-title">syFinance - Personal Finance App</h3>
-                                    <p class="card-text">
-                                        A personal finance dashboard for tracking income, expenses, and savings insights
-                                        with a practical and simple interface.
-                                    </p>
-                                    <p class="text-muted mb-4">
-                                        Built with Streamlit, Python, and SQLite.
-                                    </p>
-                                    <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                        <a href="https://github.com/AkaruiYami/syFinance" class="btn btn-primary">View
-                                            Repository</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card mx-auto" style="max-width: 850px;">
-                                <div class="card-body p-4 p-md-5 text-center">
-                                    <h3 class="card-title">Enhanced Langton’s Ant – Cellular Automata Simulation</h3>
-                                    <p class="card-text">
-                                        An experimental simulation based on Langton’s Ant, exploring emergent behavior,
-                                        rule variations, and pattern formation in cellular automata systems.
-                                    </p>
-                                    <p class="text-muted mb-4">
-                                        Focused on algorithm design, simulation logic, and visual pattern generation.
-                                    </p>
-                                    <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                        <a href="https://github.com/AkaruiYami/enhanced-langton-ant"
-                                            class="btn btn-primary">View Repository</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <button class="carousel-control-prev carousel-control-custom" type="button" data-bs-target="#highlightedProjectsCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next carousel-control-custom" type="button" data-bs-target="#highlightedProjectsCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </section>
-
-            <!-- All Projects -->
-            <section class="reveal">
-                <h2 class="text-center mb-4">All Projects</h2>
-                <div id="projects" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <!-- Loading skeleton -->
-                    <div class="col skeleton-card-wrap"><div class="skeleton skeleton-card"></div></div>
-                    <div class="col skeleton-card-wrap"><div class="skeleton skeleton-card"></div></div>
-                    <div class="col skeleton-card-wrap"><div class="skeleton skeleton-card"></div></div>
-                    <div class="col skeleton-card-wrap d-none d-md-block"><div class="skeleton skeleton-card"></div></div>
-                    <div class="col skeleton-card-wrap d-none d-lg-block"><div class="skeleton skeleton-card"></div></div>
-                    <div class="col skeleton-card-wrap d-none d-lg-block"><div class="skeleton skeleton-card"></div></div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <div id="footer-container" class="mt-5"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/footer.js"></script>
-    <script src="/js/projects.js"></script>
-    <script src="/js/progress.js"></script>
-    <script src="/js/reveal.js"></script>
-    <script src="/js/backtotop.js"></script>
+    <script src="/js/footer.js?v=20261104-3"></script>
+    <script src="/js/projects.js?v=20261104-3"></script>
+    <script src="/js/progress.js?v=20261104-3"></script>
+    <script src="/js/reveal.js?v=20261104-3"></script>
+    <script src="/js/backtotop.js?v=20261104-3"></script>
 </body>
 
 </html>

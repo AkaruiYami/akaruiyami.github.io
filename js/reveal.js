@@ -1,4 +1,6 @@
 (function () {
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("reveal-ready");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
