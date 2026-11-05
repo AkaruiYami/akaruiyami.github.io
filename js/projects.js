@@ -3,7 +3,7 @@ const CACHE_AGE = 60 * 60 * 1000; // 1 hour
 
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("projects");
-  if (!container) return;
+  if (!container && !document.querySelector('.quest-row')) return;
 
 
   // Check cache first
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderRepos(container, repos);
   } catch (err) {
     console.error("Failed to load GitHub repos:", err);
+    if (!container) return;
     container.innerHTML = `
       <p class="text-danger text-center mt-4">
         Projects could not be loaded. <a href="https://github.com/AkaruiYami?tab=repositories">Explore the repositories on GitHub ↗</a>
@@ -41,6 +42,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function renderRepos(container, repos) {
+  // Keep the static repository links as fallbacks if metadata is unavailable.
+  document.querySelectorAll('.quest-row').forEach(link => {
+    const repo = repos.find(repo => repo.html_url?.toLowerCase() === link.href.toLowerCase());
+    if (!repo?.homepage?.trim()) return;
+    try {
+      const homepage = new URL(repo.homepage.trim());
+      if (['https:', 'http:'].includes(homepage.protocol)) link.href = homepage.href;
+    } catch (_) { /* Keep the repository link for invalid website URLs. */ }
+  });
+  if (!container) return;
+
   const exclude = new Set([
     "AkaruiYami",
     "RandomAssignment",
